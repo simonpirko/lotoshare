@@ -1,0 +1,101 @@
+.sidenav {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 66px;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #d1d1d1;
+    bottom: 15px;
+    display: none;
+    overflow: hidden;
+}
+
+.sidenav:hover {
+    overflow: auto;
+}
+
+.sidenav a {
+    padding: 8px 0 8px 32px;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    /*font-size: 14px;*/
+}
+
+.sidenav p {
+    padding: 0 0 0 20px;
+    font-size: 16px;
+    display: block;
+}
+
+.sidenav .brand {
+    font-size: 30px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+}
+
+.sidenav .brand-icon {
+margin-bottom: 35px;
+}
+
+.sidenav .container {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.sidenav a:hover {
+    color: #5ad206;
+    /*border: 1px solid #5ad206;*/
+}
+
+.close-btn {
+    font-size: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.sidenav .closebtn:hover {
+    color: #5ad206;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.search-custom {
+    margin: 0 15px 40px 15px;
+    border-bottom: 3px solid #dee2e6 !important;
+}
+
+.search-custom:focus {
+    margin: 0 15px 40px 15px;
+    border-bottom: 3px solid #5ad206 !important;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav a {font-size: 18px;}
+    .sidenav p {font-size: 20px;}
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
