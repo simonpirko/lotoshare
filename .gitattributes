@@ -19,6 +19,7 @@
 *.sh            text
 *.svg           text
 *.txt           text
+*.ftl           text
 *.xml           text
 *.sql           text
 *.sh            text
