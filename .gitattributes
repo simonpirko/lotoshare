@@ -3,6 +3,7 @@
 # - handle all files detected as binary untouched
 * text=auto
 *.ftl -text
+*.ftl text
 
 # TEXT (convert crlf => lf)
 *.css           text
