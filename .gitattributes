@@ -2,6 +2,7 @@
 # - handle line endings automatically for files detected as text
 # - handle all files detected as binary untouched
 * text=auto
+*.ftl -text
 
 # TEXT (convert crlf => lf)
 *.css           text
