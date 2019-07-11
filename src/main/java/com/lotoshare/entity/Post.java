@@ -16,7 +16,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //todo "Посмотреть на @Valid и @NoNull в Entity"
+    //TODO -> Посмотреть на @Valid и @NoNull в Entity
     @Column(name = "category")
     private String category;
 

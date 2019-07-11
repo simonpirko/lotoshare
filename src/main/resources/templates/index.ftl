@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <title>${title}</title>
     <!-- Required meta tags and links -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,30 +15,37 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/navbar.css">
-
-    <title>${title}</title>
+    <!-- JS -->
+    <script src="/js/scripts.js" defer></script>
 </head>
 <body>
 
 <!-- Side Bar -->
 <div id="sidenav" class="sidenav border-right">
     <div class="container">
-        <a class="font-weight-light" href="/new">Создать объявление</a>
-        <a class="font-weight-light" href="/viewpost/${userCook}">Ваши объявления</a>
+        <a class="row font-weight-light" href="/new"><i class="col-1 material-icons">create</i><span
+                class="col-9 custom-col-span-category-name">Создать объявление</span></a>
+        <a class="row font-weight-light" href="/viewpost/${userCook}"><i
+                class="col-1 material-icons">business_center</i><span
+                class="col-9 custom-col-span-category-name">Ваши объявления</span></a>
         <div class="dropdown-divider"></div>
         <#list categories as category>
-        <a class="font-weight-light" href="/sort/${category.getName()}">${category.getRuname()}</a>
+        <a class="row font-weight-light" href="/sort/${category.getName()}"><i
+                class="col-1 material-icons">list</i><span
+                class="col-9 custom-col-span-category-name">${category.getRuname()}</span></a>
         </#list>
         <div class="dropdown-divider"></div>
-        <a class="font-weight-light" href="/about">О проекте</a>
-        <a class="font-weight-light" href="/feedback">Обратная связь</a>
+        <a class="row font-weight-light" href="/about"><i class="col-1 material-icons">code</i><span
+                class="col-9 custom-col-span-category-name">О проекте</span></a>
+        <a class="row font-weight-light" href="/feedback"><i class="col-1 material-icons">feedback</i><span
+                class="col-9 custom-col-span-category-name">Обратная связь</span></a>
     </div>
 </div>
 <!-- /Side Bar -->
 
 <!-- Disable JS -->
 <noscript>
-    <p class="text-center h4 mt-1">Ужас! Включите JavaScript!</p>
+    <p class="font-weight-light text-center h5 m-4">Ужас! Включите JavaScript!</p>
 </noscript>
 <!-- Disable JS -->
 
@@ -72,11 +80,18 @@
     </ul>
     <ul class="navbar-nav">
         <li class="nav-item">
-            <span data-toggle="tooltip" data-placement="bottom"
-                  title="У Вас нет новых сообщений!" class="nav-link alert-btn"><i class="material-icons">notifications_none</i></span>
+
+        <#--<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title"-->
+        <#--data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover-->
+        <#--</button>-->
+
+            <span data-toggle="popover" data-placement="bottom"
+                  title="Ваши сообщения" tabindex="0" data-trigger="focus" data-content="У Вас нет новых сообщений!"
+                  class="nav-link alert-btn"><i class="material-icons">notifications_none</i></span>
             <#if alertMassageShow>
-            <span data-toggle="tooltip" data-placement="bottom"
-                  title="${alertMassage}" class="nav-link alert-btn"><i class="material-icons">notifications_active</i></span>
+            <span data-toggle="popover" data-placement="bottom"
+                  title="Ваши сообщения" tabindex="0" data-trigger="focus" data-content="${alertMassage}"
+                  class="nav-link alert-btn"><i class="material-icons">notifications_active</i></span>
             </#if>
         </li>
         <li class="nav-item">
@@ -100,8 +115,8 @@
     <div class="row">
         <div id="showAlert" class="col cooks-alert">
             <div class="alert alert-dismissible fade show" role="alert">
-                <strong>Добро пожаловать!</strong>
-                <p>${massage}</p>
+                <strong class="text-muted">Добро пожаловать!</strong>
+                <p class="text-muted text-justify">${massage}</p>
                 <button type="button" class="close" data-dismiss="alert" onclick="setCookie()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -146,13 +161,13 @@
 <#--</div>-->
     <div class="row">
         <#list posts as post>
-            <div class="col-xl-3 custom-card-col">
+            <div class="col-lg-3 custom-card-col">
                 <div class="card custom-card rounded-0">
                     <a href="${'/post/' + post.getId()}" class="text-dark card-link">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold">${post.getTitle()}</h5>
                             <p class="card-text small text-truncate">${post.getText()}</p>
-                            <div class="row card-text">
+                            <div class="row card-text badge-cus">
                                 <span class="col-7 text-muted font-weight-light">${post.getDate()}</span>
                                 <span class="col-5 text-center text-muted font-weight-light text-uppercase">${post.getType()}</span>
                             </div>
@@ -227,6 +242,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script src="/js/scripts.js"></script>
+
 </body>
 </html>

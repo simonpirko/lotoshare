@@ -4,29 +4,22 @@ import com.lotoshare.configuration.PageWrapper;
 import com.lotoshare.entity.Category;
 import com.lotoshare.entity.Massage;
 import com.lotoshare.entity.Post;
-import com.lotoshare.entity.User;
-import com.lotoshare.repository.MassageRepository;
 import com.lotoshare.service.CategoryService;
 import com.lotoshare.service.MassageService;
 import com.lotoshare.service.PostService;
-import com.lotoshare.service.UserService;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping(path = "/")

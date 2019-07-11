@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<#--<title>${title}</title>-->
     <!-- Required meta tags and links -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,29 +10,35 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <!-- Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/navbar.css">
-
-<#--<title>${title}</title>-->
+    <!-- JS -->
+    <script async="" src="/js/scripts.js"></script>
 </head>
 <body>
 
 <!-- Side Bar -->
 <div id="sidenav" class="sidenav border-right">
     <div class="container">
-        <a class="font-weight-light" href="/new">Создать объявление</a>
-        <a class="font-weight-light" href="/viewpost/${userCook}">Ваши объявления</a>
+        <a class="row font-weight-light" href="/new"><i class="col-1 material-icons">create</i><span
+                class="col-9 custom-col-span-category-name">Создать объявление</span></a>
+        <a class="row font-weight-light" href="/viewpost/${userCook}"><i
+                class="col-1 material-icons">business_center</i><span
+                class="col-9 custom-col-span-category-name">Ваши объявления</span></a>
         <div class="dropdown-divider"></div>
         <#list categories as category>
-        <a class="font-weight-light" href="/sort/${category.getName()}">${category.getRuname()}</a>
+        <a class="row font-weight-light" href="/sort/${category.getName()}"><i
+                class="col-1 material-icons">list</i><span
+                class="col-9 custom-col-span-category-name">${category.getRuname()}</span></a>
         </#list>
         <div class="dropdown-divider"></div>
-        <a class="font-weight-light" href="/about">О проекте</a>
-        <a class="font-weight-light" href="/feedback">Обратная связь</a>
+        <a class="font-weight-light" href="/about"><i class="material-icons">code</i><span
+                class="col-9 custom-col-span-category-nam">О проекте</span></a>
+        <a class="font-weight-light" href="/feedback"><i class="material-icons">feedback</i><span
+                class="col-9 custom-col-span-category-name">Обратная связь</span></a>
     </div>
 </div>
 <!-- /Side Bar -->
@@ -106,7 +113,7 @@
         <p class="text-center font-weight-light text-muted h6">${post.getType() + ", " + post.getDate()}</p>
     </div>
     <div class="row justify-content-left custom-text-description mt-5">
-        <p class="font-weight-light h5">${post.getText()}</p>
+        <p class="font-weight-light text-justify h5">${post.getText()}</p>
     </div>
     <div class="row justify-content-left custom-text-description mt-3">
         <p class="font-weight-light text-muted h6">${'Автор: ' + post.getAuthor()}</p>
@@ -169,9 +176,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"></script>
-<script src="/js/scripts.js"></script>
-<script>closeNav()</script>
 </body>
 </html>

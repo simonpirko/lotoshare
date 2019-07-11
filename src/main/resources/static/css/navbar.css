@@ -100,7 +100,7 @@ body {
     height: 30px;
     position: absolute;
     top: 13px;
-    margin-left: 411px;
+    margin-left: 409px;
     z-index: 1390;
     border: 1px solid #5ad206;
     color: #8c8c8c;
@@ -146,6 +146,19 @@ body {
 
 .custom-badge { /* TODO Убрать custom badge, просмотреть альтернативаные варианты. */
     border: 1px solid #5ad206;
+}
+
+.popover {
+    border-radius: 0;
+    box-shadow: 0 5px 10px #d1d1d1;
+}
+
+.popover-header {
+    background-color: #ffffff;
+}
+
+.custom-col-span-category-name {
+    vertical-align: top;
 }
 
 @media (min-width: 5em) {

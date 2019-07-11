@@ -12,9 +12,9 @@ function setCookie() {
 
 if (getCookie('agree') === 'yes') document.getElementById('showAlert').style.display = 'none';
 
-function getShowAlertMassage(bool) {
-    // if (bool === 'false') document.getElementById('alertMassage').style.display = 'none';
-}
+// function getShowAlertMassage(bool) {
+//     if (bool === 'false') document.getElementById('alertMassage').style.display = 'none';
+// }
 
 //COOKIES
 
@@ -36,11 +36,27 @@ function setWidthSearchBar(getSizeWindow) {
     }
 }
 
-function autoOpenSideBar(getSizeWindow) {
-    if (getSizeWindow > 980) {
-        openNav();
+function setDisplayBadgeClose(getSizeWindow) {
+    if (getSizeWindow >= 992) {
+        var x = document.createElement("STYLE");
+        var t = document.createTextNode(".badge-cus {display: none;}");
+        x.appendChild(t);
+        document.head.appendChild(x);
     }
 }
+
+function setDisplayBadgeShow() {
+    var x = document.createElement("STYLE");
+    var t = document.createTextNode(".badge-cus {display: block;}");
+    x.appendChild(t);
+    document.head.appendChild(x);
+}
+
+// function autoOpenSideBar(getSizeWindow) {
+//     if (getSizeWindow > 980) {
+//         openNav();
+//     }
+// }
 
 // autoOpenSideBar(getSizeWindow());
 
@@ -53,6 +69,7 @@ function openNav() {
     document.getElementById("container").style.width = "auto";
     document.getElementById("container").style.marginRight = "1rem";
     setWidthSideNav(getSizeWindow());
+    // setDisplayBadgeClose(getSizeWindow());
 }
 
 function closeNav() {
@@ -63,6 +80,8 @@ function closeNav() {
     document.getElementById("container").style.marginLeft = "auto";
     document.getElementById("container").style.marginRight = "auto";
     document.getElementById("container").style.display = "block";
+    document.getElementById("badge-card").style.display = "block";
+    // setDisplayBadgeShow();
 }
 
 function openSearchBar() {
@@ -85,5 +104,11 @@ function closeSearchBar() {
 //User Tooltip TODO Переработать User и Massage, изменить на popover.
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
+});
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
+$('.popover-dismiss').popover({
+    trigger: 'focus'
 });
 // /User Tooltip
